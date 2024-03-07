@@ -1,0 +1,63 @@
+#:kivy 2.1.0
+
+<HintPopup>:
+    title: 'Hint'
+    size_hint: None, None
+    size: 300, 200
+
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: root.hint_text
+            size_hint_y: 0.8
+        Button:
+            text: 'Close'
+            size_hint_y: 0.2
+            on_release: root.dismiss()
+
+<LevelSelection>:
+    orientation: 'vertical'
+    levels: ['easy', 'medium', 'hard']
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: self.minimum_height
+        Button:
+            text: 'Easy'
+            size_hint_y: None
+            height: 50
+            on_release: root.start_game('easy')
+        Button:
+            text: 'Medium'
+            size_hint_y: None
+            height: 50
+            on_release: root.start_game('medium')
+        Button:
+            text: 'Hard'
+            size_hint_y: None
+            height: 50
+            on_release: root.start_game('hard')
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: self.minimum_height
+        Button:
+            text: 'Easy Hint'
+            size_hint_y: None
+            height: 50
+            on_release: root.show_hint('easy')
+        Button:
+            text: 'Medium Hint'
+            size_hint_y: None
+            height: 50
+            on_release: root.show_hint('medium')
+        Button:
+            text: 'Hard Hint'
+            size_hint_y: None
+            height: 50
+            on_release: root.show_hint('hard')
+
+<WordSearchGame>:
+    # ... (rest of the code for WordSearchGame)
